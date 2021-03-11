@@ -18,8 +18,8 @@ public class Main {
         //failedEdges.add(new int[]{1, 0});
 
         //exampleNice
-        //failedEdges.add(new int[]{5, 1});
-        //failedEdges.add(new int[]{6, 7});
+        failedEdges.add(new int[]{5, 1});
+        failedEdges.add(new int[]{6, 7});
 
         //exampleTree
         //failedEdges.add(new int[]{0, 1});

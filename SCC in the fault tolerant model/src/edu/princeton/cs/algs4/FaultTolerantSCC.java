@@ -155,14 +155,10 @@ public class FaultTolerantSCC {
         }
         //Calculate Data Structures of Theorem 2
         //Calcalculate the kFTRSes for each v in G
-        System.out.println("-Calcalculating " + k + "-FTRS for each v in G...");
         calculateKFTRSvi(G, Gr, InEdgesG, kFTRSes , k);
         //Calcalculate the kFTRSes for each v in Gr
-        System.out.println();
-        System.out.println("-Calcalculating " + k + "-FTRS for each v in Greversed...");
-        System.out.println();
         //calculateKFTRSvi(Gr, InEdgesGr, kFTRSesR , k);
-        System.out.println("------------------------------------------------- Preprocessing Done ------------------------------------------------");
+        System.out.println("------------------------------------------------- Preprocessing Done ------------------------------------------------\n\n");
     }
 
     private void dfs(Digraph G, int v, Digraph dfsTree, int[] subtreeSize) {
@@ -227,7 +223,7 @@ public class FaultTolerantSCC {
                     }
                 }
             }
-            System.out.println("NEW START ======= " + pathNew[0]);
+            //System.out.println("NEW START ======= " + pathNew[0]);
             Paths.add(pathNew);
         }
         return Paths;
@@ -287,14 +283,16 @@ public class FaultTolerantSCC {
     }
 
     private void calculateKFTRSvi(Digraph G, Digraph Gr, HashSet[][] InEdges, Digraph[] kFTRSes,  int k){
-        //System.out.println(G.toString());
+        System.out.print("-Preprocessing paths...");
         for(int[] Pab: P){
             int a = Pab[0];
+            System.out.println("\n..................................................... Preprocessing path : " + Arrays.toString(Pab) + "\n");
             kFTRSs.put(a, new HashMap<Integer, DynamicDigraph>());
             kFTRSsR.put(a, new HashMap<Integer, DynamicDigraph>());
             if(subtreeVerticesT.get(a).size() == 0){
                 subtreeVerticesT.get(a).add(a);
             }
+            System.out.println("-Creating subgraph of G induced by vertices in T(" + a +")...");
             DynamicDigraph Ga = new DynamicDigraph(subtreeVerticesT.get(a));
             for(int v: Ga.vertices()) {
                 for (int w : G.adj(v)) {
@@ -309,23 +307,26 @@ public class FaultTolerantSCC {
                 }
             }
             for(int v: Pab) {
+                System.out.println("-Creating " + k + "-FTRS with s = " + v);
                 DynamicDigraph kFTRS = Ga;
                 for (int t: Ga.vertices()) {
                     if(v != t){
                         kFTRS = kFTRS(kFTRS, InEdges, k, v, t);
                     }
                 }
-                System.out.println("============================= kFTRS of node " + v +" =============================");
-                System.out.println(kFTRS.toString());
+                System.out.println("---> " + k + "-FTRS with s = " + v + " has " + kFTRS.E() + "(< 2^k*n = " + "2^"+ k + "*"+ kFTRS.vertices().size() + " = " + Math.pow(2, k)*(kFTRS.vertices().size()) + ") edges <---");
+                //System.out.println(kFTRS.toString());
                 kFTRSs.get(a).put(v, kFTRS);
+
+                System.out.println("-Creating " + k + "-FTRS^R with s = " + v);
                 DynamicDigraph kFTRSr = Gar;
                 for (int t: Gar.vertices()) {
                     if(v != t){
                         kFTRSr = kFTRS(kFTRSr, InEdgesGr, k, v, t);
                     }
                 }
-                System.out.println("============================= kFTRSre of node " + v + " =============================");
-                System.out.println(kFTRSr.toString());
+                System.out.println("---> " + k + "-FTRS^R with s = " + v + " has " + kFTRSr.E() + "(< 2^k*n = " + "2^"+ k + "*"+ kFTRSr.vertices().size() + " = " + Math.pow(2, k)*(kFTRSr.vertices().size()) + ") edges <---");
+                //System.out.println(kFTRSr.toString());
                 kFTRSsR.get(a).put(v, kFTRSr);
             }
         }
@@ -464,7 +465,6 @@ public class FaultTolerantSCC {
                 }
             }
         }
-        System.out.println();
         InEdges[s][t] = InEdgesT;
         DynamicDigraph kFTRS = new DynamicDigraph(G.vertices());
         for(int v: G.vertices()){
@@ -598,7 +598,7 @@ public class FaultTolerantSCC {
             HashSet<Integer> Vt = new HashSet<Integer>();
             getReachableVertices(b, kFTRSs.get(a).get(b), Vt, false);
 
-            System.out.println(V1+ ", " + Vt);
+            //System.out.println(V1+ ", " + Vt);
 
             //We need A = V1\Vt
             A = calculateSetSubtraction(V1, Vt);
@@ -610,7 +610,7 @@ public class FaultTolerantSCC {
             for (int v: Vt) {
                 Xouts[v] = Pab.length-1;
             }
-            System.out.println("Xouts = " +Arrays.toString(Xouts));
+            //System.out.println("Xouts = " +Arrays.toString(Xouts));
             //############################### BINARY SEARCH FOR Xins IN THE REVERSED GRAPH ###############################
             System.out.println("Calculating Xins...");
             //------------------------------------Calculate V1r in Gr(reversed)------------------------------------------
@@ -623,7 +623,7 @@ public class FaultTolerantSCC {
             HashSet<Integer> Vtr = new HashSet<Integer>();
             getReachableVertices(b, kFTRSsR.get(a).get(b), Vtr, true);
 
-            System.out.println(V1r+ ", " + Vtr);
+            //System.out.println(V1r+ ", " + Vtr);
 
             //We need A = Vtr\V1r
             A = calculateSetSubtraction(Vtr, V1r);
@@ -639,7 +639,7 @@ public class FaultTolerantSCC {
             for (int v: V1r) {
                 Xins[v] = 0;
             }
-            System.out.println("Xins = " + Arrays.toString(Xins));
+            //System.out.println("Xins = " + Arrays.toString(Xins));
 
             //################################### FIND THE SCCS INTESECTING P(a,b) #######################################
             Map<String, ArrayList<Integer>> SCCs = calculateSCCsFromXinfo(Xins, Xouts, G, Pab);
@@ -666,20 +666,20 @@ public class FaultTolerantSCC {
             for (int v: A) {
                 if(inReverse){
                     Xinfo[v] = (Pab.length-1) - i;  //Xins
-                    System.out.println("Xinfo["+ v +"] = " + i);
+                    //System.out.println("Xinfo["+ v +"] = " + i);
                 }else{
                     Xinfo[v] = i;                   //Xouts
                     //System.out.println("Xinfo["+ v +"] = " + i);
                 }
             }
         }else {
-            System.out.println(i + ", " + j);
+            //System.out.println(i + ", " + j);
             int mid = (int) Math.ceil((double)(i+j)/2);
-            System.out.println("Pab[mid] = " + Pab[mid]);
+            //System.out.println("Pab[mid] = " + Pab[mid]);
             if(!AdeepCopy.isEmpty()){
                 HashSet<Integer> B = Reach(Pab[mid], AdeepCopy, InEdges, inReverse);
-                System.out.println("A == " + A);
-                System.out.println("B == " + B);
+                //System.out.println("A == " + A);
+                //System.out.println("B == " + B);
                 BinarySearch(i, mid-1, calculateSetSubtraction(AdeepCopy, B), InEdges, Xinfo, Pab, inReverse);
                 BinarySearch(mid, j, B, InEdges, Xinfo, Pab, inReverse);
             }
@@ -690,10 +690,9 @@ public class FaultTolerantSCC {
         DynamicDigraph Ga = new DynamicDigraph(A);
         for (int v: A) {
             if(InEdges[mid][v] != null){
-                System.out.println("PASS");
                 for (Object y: InEdges[mid][v]){
                     if (A.contains(y)){
-                        System.out.println("Adding " + y + " -> " + v);
+                        //System.out.println("Adding " + y + " -> " + v);
                         Ga.addEdge((Integer) y, v);
                     }
                 }
