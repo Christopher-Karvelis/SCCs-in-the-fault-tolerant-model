@@ -1,4 +1,4 @@
-# SCC-LAST
+# Strongly Conected Components in the Fault Tolerant Model
 In this project, we study the problem of calculating the strongly connected components
 of a graph in the presence of failures. The solution we implement is the one that
 Surender, Keerti and Liam proposed and it is based on the relation between
