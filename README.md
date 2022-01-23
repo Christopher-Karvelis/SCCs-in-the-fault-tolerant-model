@@ -14,3 +14,6 @@ More specifically, we consider a restricted variant of the problem in which we o
 Restricting our attention to a path allows us to implicitly compute reachability between the path vertices and the rest of the graph in time that depends logarithmically rather than linearly in the size of the path. 
 
 Therefore, we need to find an efficient way to represent the strongly connected components using paths.
+
+There are several classical algorithms for computing the SCCs in O(m + n) time that are taught in any standard undergraduate algorithms course.
+
