@@ -15,5 +15,7 @@ Restricting our attention to a path allows us to implicitly compute reachability
 
 Therefore, we need to find an efficient way to represent the strongly connected components using paths.
 
-There are several classical algorithms for computing the SCCs in O(m + n) time that are taught in any standard undergraduate algorithms course.
+There are several classical algorithms for computing the SCCs in O(m + n) time that are taught in any standard undergraduate algorithms course. One of these algorithms is tarjan's approach of the problem.
+
+If we change a bit Tarjan's algorithm to support edge failures then the computational time becomes O(m + k*n)
 
