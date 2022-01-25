@@ -89,12 +89,10 @@ public class TarjanSCC {
         int min = low[v];
         stack.push(v);
         for (int w : G.adj(v)) {
-            if(!isFailedEdge(v, w)){
+            if (!isFailedEdge(v, w)){
                 if (!marked[w]) dfs(G, w);
-
                 if (low[w] < min) min = low[w];
             }
-
         }
         if (min < low[v]) {
             low[v] = min;
