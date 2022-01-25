@@ -9,9 +9,9 @@ package edu.princeton.cs.algs4;
  *                https://algs4.cs.princeton.edu/42digraph/largeDG.txt
  *
  *  Compute the strongly-connected components of a digraph using
- *  Tarjan's algorithm.
+ *  Tarjan's algorithm when k edges have failed.
  *
- *  Runs in O(E + V) time.
+ *  Runs in O(E + k*V) time.
  *
  *  % java TarjanSCC tinyDG.txt
  *  5 components
@@ -110,7 +110,7 @@ public class TarjanSCC {
     public boolean isFailedEdge(int v, int w){
         boolean hasFailed = false;
         for (int[] edge: failedEdges) {
-            if(edge[0] == v && edge[1] == w){
+            if (edge[0] == v && edge[1] == w){
                 hasFailed = true;
             }
         }
