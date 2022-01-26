@@ -23,7 +23,7 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 
 If we change a bit Tarjan's algorithm to support k edge failures then the computational time becomes O(k*m + n). In a dense graph the maximum number of edges is n * (n - 1). That is because if you have n nodes, there are n - 1 directed edges than can lead from it (going to every other node). 
 
-Therefore, the time complexity becomes <img src="https://render.githubusercontent.com/render/math?math=O(k*(n^2-n/2) + n)">, the question is can we achieve something better than this?
+Therefore, the time complexity becomes <img src="https://render.githubusercontent.com/render/math?math=O(k*(n^2-n/)2 + n)">, the question is can we achieve something better than this?
 
 
 
