@@ -81,5 +81,9 @@ Definition: Given a vertex v ∈ V and an integer k ≥ 1, a subgraph G0 = (V, E
 k-FTRS(v) if for any set F of k edge failures, the following condition holds: v is reachable from s in G\F
 if and only if v is reachable from s in G0\F
 
+The algorithm implemented runs in O(2kmn) time and for any given integer k ≥ 1, and any given
+directed graph G on n vertices, m edges and a designated source vertex s, computes a k-FTRS for G with
+at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bounded by 2 k.
+
 ![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png)
 
