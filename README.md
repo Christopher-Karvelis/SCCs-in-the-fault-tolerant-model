@@ -85,5 +85,7 @@ The algorithm implemented runs in O(2kmn) time and for any given integer k ≥ 1
 directed graph G on n vertices, m edges and a designated source vertex s, computes a k-FTRS for G with
 at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bounded by 2 k.
 
-![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png)
+![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png) 
+![kFTRS_algo_2](https://user-images.githubusercontent.com/25777650/151420994-703429f0-9d9b-4ee7-a3a3-18a13bae9fa4.png)
+
 
