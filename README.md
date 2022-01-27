@@ -60,3 +60,5 @@ So we will visualize the same graph G as a network with unit edge capacities.
 The following well known result from Graph theory shows the connection between max-flow and edge-disjoint paths.
 
 For any positive integer α, there is a flow from a source set S to a destination vertex t of value α if and only if there are α edge disjoint paths originating from set S and terminating at t.
+
+So if we have α disjoint paths originating from a node s and terminating at t, then we have α different ways to reach t starting from s.
