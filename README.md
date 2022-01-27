@@ -50,4 +50,13 @@ This decomposition is carried out as follows:
  
 ![hld](https://user-images.githubusercontent.com/25777650/151389548-f858166e-8379-42cc-9152-79525b0531bc.png)
 
+##  k-Fault Tolerant Reachability Subgraph (k-FTRS)
+Sparse subgraph that preserves the reachability from a given fixed source s even after k failures.
 
+The algorithm for computing a k-FTRS involves the concepts of max-flow, min-cut, and edge disjoint paths. 
+So we will visualize the same graph G as a network with unit edge capacities. 
+
+### Main Idea of k-FTRS
+The following well known result from Graph theory shows the connection between max-flow and edge-disjoint paths.
+
+For any positive integer α, there is a flow from a source set S to a destination vertex t of value α if and only if there are α edge disjoint paths originating from set S and terminating at t.
