@@ -22,7 +22,7 @@ Restricting our attention to a path allows us to implicitly compute reachability
 
 Different techniques are used, such as:
 - the heavy path decomposition 
-- and the creation of subgraphs that maintain the reachability between vertices under the presence of failures. 
+- and the creation of subgraphs that maintain the reachability between vertices under the presence of failures using known techniques such as flow algorithms. 
 
  
 Therefore, we need to find an efficient way to represent the strongly connected components using paths.
