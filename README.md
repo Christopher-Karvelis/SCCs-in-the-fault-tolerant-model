@@ -1,8 +1,14 @@
 # Strongly Conected Components in the Fault Tolerant Model
 
-In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
-
 ## Intro
+Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
+where vertices (or edges) may change their status from active to failed, and vice versa. These failures,
+though unpredictable, are small in numbers and are transient due to some simultaneous repair process that is
+undertaken in these applications. This aspect can be captured by associating a parameter k with the network
+such that there are at most k vertices (or edges) that are failed at any stage, where k is much smaller than the
+number of vertices in the underlying graph.
+
+In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
 
 There are several classical algorithms for computing the SCCs in <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(m&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time that are taught in any standard undergraduate algorithms course. One of these algorithms is Τarjan's approach of the problem. In this project we study the following natural variant of the problem in dynamic graphs.
 
