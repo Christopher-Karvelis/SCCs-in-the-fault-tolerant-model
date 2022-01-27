@@ -62,3 +62,14 @@ The following well known result from Graph theory shows the connection between m
 For any positive integer α, there is a flow from a source set S to a destination vertex t of value α if and only if there are α edge disjoint paths originating from set S and terminating at t.
 
 So if we have α disjoint paths originating from a node s and terminating at t, then we have α different ways to reach t starting from s.
+
+### Farthest Min-Cut
+
+Ford and Fullkerson gave an algorithm for constructing the farthest (S, t)-min-cut and also established its uniqueness.
+
+A set of edges is said to be an (S, t)-cut if each path from any s ∈ S to t must pass through at least one edge from C. The size of a cut C is the number of edges present in C. An (S, t)-cut of smallest size is called (S, t)-min-cut.
+
+Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partitions the vertex set into two sets: A(C) containing S, and B(C) containing t. An (S, t)-min-cut C
+is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
+
+![FMC_3](https://user-images.githubusercontent.com/25777650/151416776-84f805d4-add4-4645-acaf-402b89d0ed89.png)
