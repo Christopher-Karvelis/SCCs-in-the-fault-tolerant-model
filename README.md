@@ -73,3 +73,13 @@ Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partit
 is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
 
 ![FMC_3](https://user-images.githubusercontent.com/25777650/151416776-84f805d4-add4-4645-acaf-402b89d0ed89.png)
+
+### Computing k-FTRS(t)
+
+Definition: Given a vertex v ∈ V and an integer k ≥ 1, a subgraph G0 = (V, E0
+), E0 ⊆ E is said to be
+k-FTRS(v) if for any set F of k edge failures, the following condition holds: v is reachable from s in G\F
+if and only if v is reachable from s in G0\F
+
+![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png)
+
