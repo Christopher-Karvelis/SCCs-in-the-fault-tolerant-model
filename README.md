@@ -25,6 +25,6 @@ If we change a bit Tarjan's algorithm to support k edge failures then the comput
 
 Therefore, the time complexity becomes <img src="https://latex.codecogs.com/svg.image?\bg_white&space;O(k*\frac{(n^2-n)}{2}&space;&plus;&space;n)" title="\bg_white O(k*\frac{(n^2-n)}{2} + n)" />, the question is can we achieve something better than this?
 
-
+ 
 
 
