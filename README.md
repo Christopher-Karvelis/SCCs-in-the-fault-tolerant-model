@@ -48,5 +48,6 @@ This decomposition is carried out as follows:
 - Each of these trees hangs from P through an edge in T. 
 - We carry out the decomposition of these trees recursively.
  
+![hld](https://user-images.githubusercontent.com/25777650/151389548-f858166e-8379-42cc-9152-79525b0531bc.png)
 
 
