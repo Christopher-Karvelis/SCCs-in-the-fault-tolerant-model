@@ -35,7 +35,7 @@ Different techniques are used, such as:
  
 Therefore, we need to find an efficient way to represent the strongly connected components using paths.
 
-### Structure of the Project
+## Structure of the Project
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
 
@@ -97,5 +97,50 @@ at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bou
 
 
 ![σδφ](https://user-images.githubusercontent.com/25777650/151563009-b7884b01-8eb1-4677-bea7-499b3a8030ec.png)
+
+## Computation of SCCs Intersecting a Given Path
+
+For each v ∈ V, let Xin(v) be the vertex of X of minimum index (if exists) that
+is reachable from v in G\F. Similarly, let Xout(v) be the vertex of X of maximum
+index (if exists) that has a path to v in G\F
+
+For any vertex w ∈ V , the SCC that contains w in G\F intersects X if
+and only if the following two conditions are satisfied.
+(i) Both Xin(w) and Xout(w) are defined, and
+(ii) Either Xin(w) = Xout(w), or Xin(w) appears before Xout(w) on X.
+
+Let a, b be any two vertices in V whose SCCs intersect X. Then a and b
+lie in the same SCC if and only if Xin(a) = Xin(b) and Xout(a) = Xout(b).
+
+### Calculation of Xin an Xout
+It follows from the above two lemmas that in order to compute the SCCs in G\F
+that intersect with X, it suffices to compute Xin(·) and Xout(·) for all vertices in V.
+
+It suffices to focus on computation of Xout(·) for all the vertices of V, since Xin(·) can be
+computed in an analogous manner by just looking at graph GR.
+
+One trivial approach to achieve this goal is to compute the set Vi consisting of all vertices reachable from
+each xi by performing a BFS or DFS traversal of graph G(xi)\F, for 1 ≤ i ≤ t = |X|.
+
+Using this straightforward approach it takes O(2knt) time to complete the task of
+computing Xout(v) for every v ∈ V, while our target is to do so in O(2kn log n) time.
+
+Observe the nested structure underlying Vi’s, that is, V1 ⊇ V2 ⊇···⊇ Vt . Consider
+any vertex xl, 1 <l< t. The nested structure implies that for every v ∈ Vt, Xout(v)
+must be on the portion (xl,..., xt) of X.
+
+Similarly, it implies that for every v ∈ V1\Vl,
+Xout(v)must be on the portion (x1,..., xl−1) of X. 
+
+This suggests a divide and conquer approach to efficiently compute Xout(·).
+
+We first compute the sets V1 and Vt in O(2kn) time each.
+
+For each v ∈ V\V1, we assign NULL to Xout(v) as it is not reachable
+from any vertex on X; and for each v ∈ Vt we set Xout(v) to xt . For vertices in set
+V1 \ Vt , Xout(·) is computed by calling the function Binary-Search(1, t − 1, V1\Vt).
+
+![bfs](https://user-images.githubusercontent.com/25777650/151580197-9e5e803c-2e18-43ef-9d0f-a88630fa4fea.png)
+
 
 
