@@ -72,7 +72,8 @@ A set of edges is said to be an (S, t)-cut if each path from any s ∈ S to t mu
 Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partitions the vertex set into two sets: A(C) containing S, and B(C) containing t. An (S, t)-min-cut C
 is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
 
-![FMC_3](https://user-images.githubusercontent.com/25777650/151416776-84f805d4-add4-4645-acaf-402b89d0ed89.png)
+![fig1](https://user-images.githubusercontent.com/25777650/151563746-adab989a-f8ac-4a35-86d3-8b7d7380c0ed.png)
+
 
 ### Computing k-FTRS(t)
 
@@ -87,6 +88,7 @@ at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bou
 
 ![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png) 
 
-![kFTRS_algo_2](https://user-images.githubusercontent.com/25777650/151420994-703429f0-9d9b-4ee7-a3a3-18a13bae9fa4.png)
+
+![σδφ](https://user-images.githubusercontent.com/25777650/151563009-b7884b01-8eb1-4677-bea7-499b3a8030ec.png)
 
 
