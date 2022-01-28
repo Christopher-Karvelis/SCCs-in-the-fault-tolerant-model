@@ -112,7 +112,7 @@ and only if the following two conditions are satisfied.
 Let a, b be any two vertices in V whose SCCs intersect X. Then a and b
 lie in the same SCC if and only if Xin(a) = Xin(b) and Xout(a) = Xout(b).
 
-### Calculation of Xin an Xout
+### Calculation of Xin and Xout
 It follows from the above two lemmas that in order to compute the SCCs in G\F
 that intersect with X, it suffices to compute Xin(·) and Xout(·) for all vertices in V.
 
