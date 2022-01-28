@@ -72,7 +72,8 @@ A set of edges is said to be an (S, t)-cut if each path from any s ∈ S to t mu
 Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partitions the vertex set into two sets: A(C) containing S, and B(C) containing t. An (S, t)-min-cut C
 is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
 
-![fig1](https://user-images.githubusercontent.com/25777650/151564814-2e87f9f2-cf07-466a-9ef5-e7393af013ef.png)
+![fig1](https://user-images.githubusercontent.com/25777650/151565804-c8f699b3-8997-41a3-a879-f0210768bc7e.png)
+
 
 
 
