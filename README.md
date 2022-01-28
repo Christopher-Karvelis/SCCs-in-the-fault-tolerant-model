@@ -63,7 +63,7 @@ For any positive integer α, there is a flow from a source set S to a destinatio
 
 So if we have α disjoint paths originating from a node s and terminating at t, then we have α different ways to reach t starting from s.
 
-### Farthest Min-Cut
+### Farthest Min-Cut (FMC)
 
 Ford and Fullkerson gave an algorithm for constructing the farthest (S, t)-min-cut and also established its uniqueness.
 
@@ -72,7 +72,8 @@ A set of edges is said to be an (S, t)-cut if each path from any s ∈ S to t mu
 Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partitions the vertex set into two sets: A(C) containing S, and B(C) containing t. An (S, t)-min-cut C
 is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
 
-![fig1](https://user-images.githubusercontent.com/25777650/151564247-05e950e1-ab60-425c-a889-8f878f193e35.png)
+![fig1](https://user-images.githubusercontent.com/25777650/151564814-2e87f9f2-cf07-466a-9ef5-e7393af013ef.png)
+
 
 
 
