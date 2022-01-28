@@ -142,5 +142,9 @@ V1 \ Vt , Xout(·) is computed by calling the function Binary-Search(1, t − 1,
 
 ![bfs](https://user-images.githubusercontent.com/25777650/151580197-9e5e803c-2e18-43ef-9d0f-a88630fa4fea.png)
 
+## Implementation of Function Reach
+It suffices to do a traversal from xmid in the graph GA, the induced subgraph of A in G(x)\F, that has O(2k |A|) edges.
 
+![reach](https://user-images.githubusercontent.com/25777650/151580955-e0142471-8f91-4be1-88c3-08e6782b8ba4.png)
 
+## Main Algorithm
