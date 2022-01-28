@@ -22,7 +22,8 @@ Therefore, the time complexity becomes <img src="https://latex.codecogs.com/png.
 ## Main Idea
 The solution we implement is the one that **Surender**, **Keerti** and **Liam** proposed and it is based on the relation between strongly connected components (SCCs) and reachability. 
 
-![structure](https://user-images.githubusercontent.com/25777650/151576147-d25dcb28-79e3-4787-bc11-cfcb06efcf78.png)
+![structure](https://user-images.githubusercontent.com/25777650/151576927-a227eff8-7479-43df-84a4-3d82b2635ddc.png)
+
 
 
 More specifically they showed that there is an algorithm that computes the SCCs of G\F, for any set F of k edges or vertices, in  <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(2^knlog^{2}n)" title="\bg_white \inline O(2^knlog^{2}n)" /> time. The algorithm uses a data structure of size O(2^kn^2) computed in O(2^kn^2m) time for G during a preprocessing phase.
