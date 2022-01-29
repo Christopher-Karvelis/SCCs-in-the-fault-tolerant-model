@@ -13,8 +13,6 @@ In this project, we study the problem of calculating the strongly connected comp
 There are several classical algorithms for computing the SCCs in <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(m&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time that are taught in any standard undergraduate algorithms course. One of these algorithms is Τarjan's approach of the problem. In this project we study the following natural variant of the problem in dynamic graphs.
 
 
-
-
 ## Preliminaries
 **Assumption:** The out-degree of all vertices in the input graph G is at most two.
 
@@ -24,7 +22,7 @@ subgraph that preserves reachability from a given source vertex even after the f
 In this project we construct a k-FTRS with respect to edge failures only. Vertex failures can be handled by simply splitting a vertex v into an edge (vin, vout), where the incoming and outgoing edges of v are respectively directed into vin and directed out of vout.
  
  
- 
+**For more information about the theory behind this algorithm please read these pappers!**
  
 ## Tarjan's Algorithn for SCCs
 Tarjanm's algorithm is based on simple DFS traversal of the graph hence the <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(km&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time.
