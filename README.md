@@ -14,6 +14,18 @@ There are several classical algorithms for computing the SCCs in <img src="https
 
 
 
+
+## Preliminaries
+**Assumption:** The out-degree of all vertices in the input graph G is at most two.
+
+The algorithm for computing SCCs in a fault tolerant environment crucially uses the concept of a k-fault tolerant reachability subgraph (k-FTRS) which is a sparse
+subgraph that preserves reachability from a given source vertex even after the failure of at most k edges in G.
+
+In this project we construct a k-FTRS with respect to edge failures only. Vertex failures can be handled by simply splitting a vertex v into an edge (vin, vout), where the incoming and outgoing edges of v are respectively directed into vin and directed out of vout.
+ 
+ 
+ 
+ 
 ## Tarjan's Algorithn for SCCs
 Tarjanm's algorithm is based on simple DFS traversal of the graph hence the <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(km&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time.
 
@@ -51,16 +63,6 @@ The algorithm for computing the Strongly Connected Components of a given strongl
       -  Combining all the above we return the SCCs of the G under k failed edges. 
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
-
-
-
-## Preliminaries
-**Assumption:** The out-degree of all vertices in the input graph G is at most two.
-
-The algorithm for computing SCCs in a fault tolerant environment crucially uses the concept of a k-fault tolerant reachability subgraph (k-FTRS) which is a sparse
-subgraph that preserves reachability from a given source vertex even after the failure of at most k edges in G.
-
-In this project we construct a k-FTRS with respect to edge failures only. Vertex failures can be handled by simply splitting a vertex v into an edge (vin, vout), where the incoming and outgoing edges of v are respectively directed into vin and directed out of vout.
 
 
 
