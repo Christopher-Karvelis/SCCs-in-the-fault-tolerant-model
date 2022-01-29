@@ -12,12 +12,16 @@ In this project, we study the problem of calculating the strongly connected comp
 
 There are several classical algorithms for computing the SCCs in <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(m&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time that are taught in any standard undergraduate algorithms course. One of these algorithms is Τarjan's approach of the problem. In this project we study the following natural variant of the problem in dynamic graphs.
 
+
+
 ## Tarjan's Algorithn for SCCs
 Tarjanm's algorithm is based on simple DFS traversal of the graph hence the <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(km&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time.
 
 If we change a bit Tarjan's algorithm to support k edge failures then the computational time becomes <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(km&space;&plus;&space;n)" title="\bg_white \inline O(km + n)" />. In a dense graph the maximum number of edges is n * (n - 1). That is because if you have n nodes, there are n - 1 directed edges than can lead from it (going to every other node). 
 
 Therefore, the time complexity becomes <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(k\frac{(n^2-n)}{2}&space;&plus;&space;n)" title="\bg_white \inline O(k\frac{(n^2-n)}{2} + n)" />, the question is can we achieve something better than this?
+
+
 
 ## Main Idea
 The solution we implement is the one that **Surender**, **Keerti** and **Liam** proposed and it is based on the relation between strongly connected components (SCCs) and reachability. 
@@ -32,12 +36,15 @@ Different techniques are used, such as:
 - the heavy path decomposition for creating the paths on which we will compute the intersecting SCCs.
 - and the creation of subgraphs that maintain the reachability between vertices under the presence of failures using known techniques such as flow algorithms. 
 
- 
 Therefore, we need to find an efficient way to represent the strongly connected components using paths.
+
+
 
 ## Structure of the Project
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
+
+
 
 ## Preliminaries
 **Assumption 1:** The out-degree of all vertices in G is at most two.
@@ -61,11 +68,15 @@ This decomposition is carried out as follows:
  
 ![hld](https://user-images.githubusercontent.com/25777650/151389548-f858166e-8379-42cc-9152-79525b0531bc.png)
 
+
+
 ##  k-Fault Tolerant Reachability Subgraph (k-FTRS)
 Sparse subgraph that preserves the reachability from a given fixed source s even after k failures.
 
 The algorithm for computing a k-FTRS involves the concepts of max-flow, min-cut, and edge disjoint paths. 
 So we will visualize the same graph G as a network with unit edge capacities. 
+
+
 
 ### Main Idea of k-FTRS
 The following well known result from Graph theory shows the connection between max-flow and edge-disjoint paths.
@@ -73,6 +84,8 @@ The following well known result from Graph theory shows the connection between m
 For any positive integer α, there is a flow from a source set S to a destination vertex t of value α if and only if there are α edge disjoint paths originating from set S and terminating at t.
 
 So if we have α disjoint paths originating from a node s and terminating at t, then we have α different ways to reach t starting from s.
+
+
 
 ### Farthest Min-Cut (FMC)
 
@@ -84,8 +97,6 @@ Let S be a source set and t be a destination vertex. Any (S, t)-min-cut C partit
 is said to be the farthest min-cut if A(C ) ) A(C) for any (S, t)-min-cut C other than C. We denote C∗ with FMC(G, S, t)
 
 ![fig1](https://user-images.githubusercontent.com/25777650/151565804-c8f699b3-8997-41a3-a879-f0210768bc7e.png)
-
-
 
 
 
@@ -102,8 +113,9 @@ at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bou
 
 ![kftrs_alg](https://user-images.githubusercontent.com/25777650/151420102-046bbf84-4fa3-4092-b360-0bf5be608a1c.png) 
 
-
 ![σδφ](https://user-images.githubusercontent.com/25777650/151563009-b7884b01-8eb1-4677-bea7-499b3a8030ec.png)
+
+
 
 ## Computation of SCCs Intersecting a Given Path
 
@@ -120,6 +132,8 @@ So when two vertices belong to the sanme SCC?
 
 Let a, b be any two vertices in V whose SCCs intersect X. Then a and b
 lie in the same SCC if and only if Xin(a) = Xin(b) and Xout(a) = Xout(b).
+
+
 
 ### Calculation of Xin and Xout
 It follows from the above two lemmas that in order to compute the SCCs in G\F
@@ -151,9 +165,13 @@ V1 \ Vt , Xout(·) is computed by calling the function Binary-Search(1, t − 1,
 
 ![bfs](https://user-images.githubusercontent.com/25777650/151580197-9e5e803c-2e18-43ef-9d0f-a88630fa4fea.png)
 
+
+
 ## Implementation of Function Reach
 It suffices to do a traversal from xmid in the graph GA, the induced subgraph of A in G(x)\F, that has O(2k |A|) edges.
 
 ![reach](https://user-images.githubusercontent.com/25777650/151580955-e0142471-8f91-4be1-88c3-08e6782b8ba4.png)
+
+
 
 ## Main Algorithm
