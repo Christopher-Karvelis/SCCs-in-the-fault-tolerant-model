@@ -41,13 +41,20 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 
 
 ## Structure of the Project
+The algorithm for computing the Strongly Connected Components of a given strongly connected graph G consist of two phases:
+1. A  preprocessing phase where:
+      - A heavy path ecomposition P of G is calculate by inspecting the DFS tree of G.
+      - For every path in P we calculate the k-FTRS of every node on the path.
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
 
 
 
 ## Preliminaries
-**Assumption 1:** The out-degree of all vertices in G is at most two.
+**Assumption:** The out-degree of all vertices in the input graph G is at most two.
+
+The algorithm for computing SCCs in a fault tolerant environment crucially uses the concept of a k-fault tolerant reachability subgraph (k-FTRS) which is a sparse
+subgraph that preserves reachability from a given source vertex even after the failure of at most k edges in G.
 
 In this project we construct a k-FTRS with respect to edge failures only. Vertex failures can be handled by simply splitting a vertex v into an edge (vin, vout), where the incoming and outgoing edges of v are respectively directed into vin and directed out of vout.
 
@@ -71,11 +78,11 @@ This decomposition is carried out as follows:
 
 
 ##  k-Fault Tolerant Reachability Subgraph (k-FTRS)
-Sparse subgraph that preserves the reachability from a given fixed source s even after k failures.
 
-The algorithm for computing a k-FTRS involves the concepts of max-flow, min-cut, and edge disjoint paths. 
-So we will visualize the same graph G as a network with unit edge capacities. 
+(k-FTRS): A sparse subgraph that preserves the reachability from a given fixed source s even after k failures. 
+So a vertex v is reachable from s in the original graph in the preif and only if it is reachable from the s in the subgraph.
 
+The algorithm for computing a k-FTRS involves the concepts of max-flow, min-cut, and edge disjoint paths. So we will visualize the same graph G as a network with unit edge capacities. 
 
 
 ### Main Idea of k-FTRS
