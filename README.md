@@ -39,6 +39,9 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
 
+## Preliminaries
+**Assumption 1:** The out-degree of all vertices in G is at most two.
+
 ## Heavy Path Decomposition
 
 Designed by Sleator and Tarjan Given any rooted tree T , this decomposition splits T into a set P of vertex disjoint paths.
