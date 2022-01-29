@@ -42,9 +42,13 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 
 ## Structure of the Project
 The algorithm for computing the Strongly Connected Components of a given strongly connected graph G consist of two phases:
-1. A  preprocessing phase where:
-      - A heavy path ecomposition P of G is calculate by inspecting the DFS tree of G.
-      - For every path in P we calculate the k-FTRS of every node on the path.
+1. A preprocessing phase where:
+      - A heavy path ecomposition P of G is computed by inspecting the DFS tree of G.
+      - For every path in P we compute a k-Fault Tolerant Reachability Subgraph(k-FTRS) of every node on the path as source.
+2. and the computation of SCCs phase where:
+      -  Given k failed egdes we compute the final paths of P.
+      -  We computate the SCCs intersecting a given path of P using the k-FTRSs computed in the preprocessing phase.
+      -  Combining all the above we return the SCCs of the G under k failed edges. 
 
 ![structure](https://user-images.githubusercontent.com/25777650/151577246-cbf2474f-e722-438e-815c-292cd146698a.png)
 
