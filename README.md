@@ -42,6 +42,10 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 ## Preliminaries
 **Assumption 1:** The out-degree of all vertices in G is at most two.
 
+In this project we construct a k-FTRS with respect to edge failures only. Vertex failures can be handled by simply splitting a vertex v into an edge (vin, vout), where the incoming and outgoing edges of v are respectively directed into vin and directed out of vout.
+
+
+
 ## Heavy Path Decomposition
 
 Designed by Sleator and Tarjan Given any rooted tree T , this decomposition splits T into a set P of vertex disjoint paths.
