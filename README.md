@@ -196,3 +196,11 @@ compute SCCs of G(A)\F intersecting Path(a, b). Let these be S1,..., St . Note t
 some of these SCCs might be a part of some bigger SCC computed earlier. We can
 detect it by keeping a set W of all vertices for which we have computed their SCCs.
 So if Si ⊆ W, then we can discard Si , else we add Si to collection C.
+
+
+![scc_algo](https://user-images.githubusercontent.com/25777650/151698368-256f4f9f-f25e-454a-b54b-45cf63e3323a.png)
+
+
+
+
+
