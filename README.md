@@ -53,9 +53,9 @@ Therefore, we need to find an efficient way to represent the strongly connected 
 
 
 ## Structure of the Project
-The algorithm for computing the Strongly Connected Components of a given strongly connected graph G consist of two phases:
-1. A preprocessing phase where:
-      - A heavy path ecomposition P of G is computed by inspecting the DFS tree of G.
+The algorithm for computing the Strongly Connected Components of a given strongly connected graph G consists of two phases:
+1. a preprocessing phase where:
+      - We contsruct a heavy path ecomposition P of G by inspecting the DFS tree of G.
       - For every path in P we compute a k-Fault Tolerant Reachability Subgraph(k-FTRS) of every node on the path as source.
 2. and the computation of SCCs phase where:
       -  Given k failed egdes we compute the final paths of P.
@@ -188,3 +188,11 @@ It suffices to do a traversal from xmid in the graph GA, the induced subgraph of
 
 
 ## Main Algorithm
+
+Let C denote the collection of SCCs in G\F initialized to ∅. We process the paths
+from P in non-decreasing order of their depths. Let Path(a, b) be any path in P
+and let A be the set of vertices belonging to T (a). We use the data structure Da,b to
+compute SCCs of G(A)\F intersecting Path(a, b). Let these be S1,..., St . Note that
+some of these SCCs might be a part of some bigger SCC computed earlier. We can
+detect it by keeping a set W of all vertices for which we have computed their SCCs.
+So if Si ⊆ W, then we can discard Si , else we add Si to collection C.
