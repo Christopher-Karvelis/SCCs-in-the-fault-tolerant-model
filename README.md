@@ -3,9 +3,7 @@
 
 
 ## Intro
-In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
-
-It is important to study problems like this as we come across networks more and more in real life.
+In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. It is important to study problems like this as we come across more and more networks in real life like the internet,  powerline and airline networks, etc. So we need tools to tackle any issues occurred when working with these networks.
 
 Fault Tolerant Subgraph for Single Source Reachability: Generic and Optimal(Baswana S., Choudhary K., and Roditty L., 2018):
 > Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
