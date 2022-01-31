@@ -5,13 +5,13 @@
 ## Intro
 In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
 
+Fault Tolerant Subgraph for Single Source Reachability: Generic and Optimal(Baswana S., Choudhary K., and Roditty L., 2018)
 > Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
 where edges may change their status from active to failed, and vice versa. These failures,
 though unpredictable, are small in numbers and are transient due to some simultaneous repair process that is
 undertaken in these applications. This aspect can be captured by associating a parameter k with the network
 such that there are at most k edges that are failed at any stage, where k is much smaller than the
-number of vertices in the underlying graph. (Fault Tolerant Subgraph for Single
-Source Reachability: Generic and Optimal 2)
+number of vertices in the underlying graph. 
 
 ![fault tolerance](https://user-images.githubusercontent.com/25777650/151781733-a97d70fc-8bde-4ce5-86c8-429ec5511f82.png)
 
