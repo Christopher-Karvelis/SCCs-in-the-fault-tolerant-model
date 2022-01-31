@@ -1,8 +1,27 @@
 # Strongly Conected Components in the Fault Tolerant Model
 
+## Table of Contents
+[Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#intro)
 
+[Preliminaries](https://github.com/Christopher-Karvelis/SCC-LAST#preliminaries)
 
-## Intro
+[Tarjan's Algorithn for SCCs](https://github.com/Christopher-Karvelis/SCC-LAST#Tarjans-algorithn-for-sccs)
+
+[Main Idea](https://github.com/Christopher-Karvelis/SCC-LAST#main-idea)
+
+[Structure of the Project](https://github.com/Christopher-Karvelis/SCC-LAST#structure-of-the-project)
+
+[Heavy Path Decomposition](https://github.com/Christopher-Karvelis/SCC-LAS#THeavy-path-decomposition)
+
+[k-Fault Tolerant Reachability Subgraph (k-FTRS)](https://github.com/Christopher-Karvelis/SCC-LAST#k-fault-tolerant-reachability-subgraph-k-ftrs)
+
+[Computation of SCCs Intersecting a Given Path](https://github.com/Christopher-Karvelis/SCC-LAST#computation-of-SCCs-intersecting-a-given-path)
+
+[Main Algorithm](https://github.com/Christopher-Karvelis/SCC-LAST#Main Algorithm#main-algorithm)
+
+[Examples](https://github.com/Christopher-Karvelis/SCC-LAST#examples)
+
+## Purpose
 In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. It is important to study problems like this as we come across more and more networks in real life like the internet, powerline and telephone networks, etc. This rise in demand for networks in our daily lives has spurred the  need  for tools thatcan handdle any issues occurred when working with them.
 
 Fault Tolerant Subgraph for Single Source Reachability: Generic and Optimal(Baswana S., Choudhary K., and Roditty L., 2018):
@@ -96,7 +115,7 @@ This decomposition is carried out as follows:
 
 
 
-##  k-Fault Tolerant Reachability Subgraph (k-FTRS)
+## k-Fault Tolerant Reachability Subgraph (k-FTRS)
 
 (k-FTRS): A sparse subgraph that preserves the reachability from a given fixed source s even after k failures. 
 So a vertex v is reachable from s in the original graph in the preif and only if it is reachable from the s in the subgraph.
@@ -180,7 +199,7 @@ For each v ∈ V\V1, we assign NULL to Xout(v) as it is not reachable from any v
 
 
 
-## Implementation of Function Reach
+### Implementation of Function Reach
 It suffices to do a traversal from xmid in the graph GA, the induced subgraph of A in G(x)\F, that has O(2k |A|) edges.
 
 ![reach](https://user-images.githubusercontent.com/25777650/151580955-e0142471-8f91-4be1-88c3-08e6782b8ba4.png)
@@ -209,4 +228,4 @@ It suffices to do a traversal from xmid in the graph GA, the induced subgraph of
 
 
 
-
+## Examples
