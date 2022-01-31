@@ -36,7 +36,8 @@ Therefore, the time complexity becomes <img src="https://latex.codecogs.com/png.
 
 
 ## Main Idea
-The solution we implement is the one that **Surender**, **Keerti** and **Liam** proposed and it is based on the relation between strongly connected components (SCCs) and reachability. 
+The solution we implement is the one that **Surender**, **Keerti** and **Liam** proposed in "An Efficient Strongly Connected Components
+Algorithm in the Fault Tolerant Mode" and it is based on the relation between strongly connected components (SCCs) and reachability. 
 
 More specifically they showed that there is an algorithm that computes the SCCs of G\F, for any set F of k edges or vertices, in  <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(2^knlog^{2}n)" title="\bg_white \inline O(2^knlog^{2}n)" /> time. The algorithm uses a data structure of size O(2^kn^2) computed in O(2^kn^2m) time for G during a preprocessing phase.
 
@@ -134,7 +135,9 @@ at most 2 kn edges. Moreover, the in-degree of each vertex in this k-FTRS is bou
 
 For each v ∈ V, let Xin(v) be the vertex of X of minimum index (if exists) that
 is reachable from v in G\F. Similarly, let Xout(v) be the vertex of X of maximum
-index (if exists) that has a path to v in G\F
+index (if exists) that has a path to v in G\F!
+
+[Uploading xinsxouts.png…]()
 
 For any vertex w ∈ V , the SCC that contains w in G\F intersects X if
 and only if the following two conditions are satisfied.
