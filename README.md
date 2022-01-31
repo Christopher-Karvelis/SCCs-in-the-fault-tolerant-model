@@ -5,7 +5,9 @@
 ## Intro
 In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
 
-Fault Tolerant Subgraph for Single Source Reachability: Generic and Optimal(Baswana S., Choudhary K., and Roditty L., 2018)
+It is important to study problems like this as we come across networks more and more in real life.
+
+Fault Tolerant Subgraph for Single Source Reachability: Generic and Optimal(Baswana S., Choudhary K., and Roditty L., 2018):
 > Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
 where edges may change their status from active to failed, and vice versa. These failures,
 though unpredictable, are small in numbers and are transient due to some simultaneous repair process that is
