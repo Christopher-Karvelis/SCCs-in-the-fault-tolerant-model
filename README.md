@@ -17,7 +17,7 @@
 
 [Computation of SCCs Intersecting a Given Path](https://github.com/Christopher-Karvelis/SCC-LAST#computation-of-SCCs-intersecting-a-given-path)
 
-[Main Algorithm](https://github.com/Christopher-Karvelis/SCC-LAST#Main Algorithm#main-algorithm)
+[Main Algorithm](https://github.com/Christopher-Karvelis/SCC-LAST#main-algorithm)
 
 [Examples](https://github.com/Christopher-Karvelis/SCC-LAST#examples)
 
