@@ -161,7 +161,7 @@ The algorithm implemented runs in O(2kmn) time and for any given integer k ≥ 1
 
 For each v ∈ V, let Xin(v) be the vertex of X of minimum index (if exists) that is reachable from v in G\F. Similarly, let Xout(v) be the vertex of X of maximum index (if exists) that has a path to v in G\F.
 
-[Uploading xinsxouts.png…]()
+![xinsxouts](https://user-images.githubusercontent.com/25777650/151846120-06974b24-ac6b-4a68-8d05-83ebcca8be1d.png)
 
 For any vertex w ∈ V , the SCC that contains w in G\F intersects X if
 and only if the following two conditions are satisfied.
