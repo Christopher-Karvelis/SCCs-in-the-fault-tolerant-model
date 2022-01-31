@@ -1,17 +1,17 @@
 # Strongly Conected Components in the Fault Tolerant Model
 
 ## Table of Contents
-[Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#intro)
+[Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#purpose)
 
 [Preliminaries](https://github.com/Christopher-Karvelis/SCC-LAST#preliminaries)
 
-[Tarjan's Algorithn for SCCs](https://github.com/Christopher-Karvelis/SCC-LAST#Tarjans-algorithn-for-sccs)
+[Tarjan's Algorithn for SCCs](https://github.com/Christopher-Karvelis/SCC-LAST#tarjans-algorithn-for-sccs)
 
 [Main Idea](https://github.com/Christopher-Karvelis/SCC-LAST#main-idea)
 
 [Structure of the Project](https://github.com/Christopher-Karvelis/SCC-LAST#structure-of-the-project)
 
-[Heavy Path Decomposition](https://github.com/Christopher-Karvelis/SCC-LAS#THeavy-path-decomposition)
+[Heavy Path Decomposition](https://github.com/Christopher-Karvelis/SCC-LAST#heavy-path-decomposition)
 
 [k-Fault Tolerant Reachability Subgraph (k-FTRS)](https://github.com/Christopher-Karvelis/SCC-LAST#k-fault-tolerant-reachability-subgraph-k-ftrs)
 
