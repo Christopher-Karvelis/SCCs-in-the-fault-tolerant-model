@@ -1,25 +1,25 @@
 # Strongly Conected Components in the Fault Tolerant Model
 
 ## Table of Contents
-[Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#purpose)
+1.  [Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#purpose)
 
-[Preliminaries](https://github.com/Christopher-Karvelis/SCC-LAST#preliminaries)
+2.  [Preliminaries](https://github.com/Christopher-Karvelis/SCC-LAST#preliminaries)
 
-[Tarjan's Algorithn for SCCs](https://github.com/Christopher-Karvelis/SCC-LAST#tarjans-algorithn-for-sccs)
+3.  [Tarjan's Algorithn for SCCs](https://github.com/Christopher-Karvelis/SCC-LAST#tarjans-algorithn-for-sccs)
 
-[Main Idea](https://github.com/Christopher-Karvelis/SCC-LAST#main-idea)
+4.  [Main Idea](https://github.com/Christopher-Karvelis/SCC-LAST#main-idea)
 
-[Structure of the Project](https://github.com/Christopher-Karvelis/SCC-LAST#structure-of-the-project)
+5.  [Structure of the Project](https://github.com/Christopher-Karvelis/SCC-LAST#structure-of-the-project)
 
-[Heavy Path Decomposition](https://github.com/Christopher-Karvelis/SCC-LAST#heavy-path-decomposition)
+6.  [Heavy Path Decomposition](https://github.com/Christopher-Karvelis/SCC-LAST#heavy-path-decomposition)
 
-[k-Fault Tolerant Reachability Subgraph (k-FTRS)](https://github.com/Christopher-Karvelis/SCC-LAST#k-fault-tolerant-reachability-subgraph-k-ftrs)
+7.  [k-Fault Tolerant Reachability Subgraph (k-FTRS)](https://github.com/Christopher-Karvelis/SCC-LAST#k-fault-tolerant-reachability-subgraph-k-ftrs)
 
-[Computation of SCCs Intersecting a Given Path](https://github.com/Christopher-Karvelis/SCC-LAST#computation-of-SCCs-intersecting-a-given-path)
+8.  [Computation of SCCs Intersecting a Given Path](https://github.com/Christopher-Karvelis/SCC-LAST#computation-of-SCCs-intersecting-a-given-path)
 
-[Main Algorithm](https://github.com/Christopher-Karvelis/SCC-LAST#main-algorithm)
+9.  [Main Algorithm](https://github.com/Christopher-Karvelis/SCC-LAST#main-algorithm)
 
-[Examples](https://github.com/Christopher-Karvelis/SCC-LAST#examples)
+10. [Examples](https://github.com/Christopher-Karvelis/SCC-LAST#examples)
 
 ## Purpose
 In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. It is important to study problems like this as we come across more and more networks in real life like the internet, powerline and telephone networks, etc. This rise in demand for networks in our daily lives has spurred the  need  for tools thatcan handdle any issues occurred when working with them.
