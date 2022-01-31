@@ -5,23 +5,28 @@
 ## Intro
 In this project, we study the problem of calculating the strongly connected components of a graph in the presence of failures. 
 
-Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
+> Networks in most real life applications are prone to failures. Such a network can be modeled as a graph
 where edges may change their status from active to failed, and vice versa. These failures,
 though unpredictable, are small in numbers and are transient due to some simultaneous repair process that is
 undertaken in these applications. This aspect can be captured by associating a parameter k with the network
 such that there are at most k edges that are failed at any stage, where k is much smaller than the
-number of vertices in the underlying graph.
+number of vertices in the underlying graph. (Fault Tolerant Subgraph for Single
+Source Reachability: Generic and Optimal 2)
 
-There are several classical algorithms for computing the SCCs in <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(m&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time that are taught in any standard undergraduate algorithms course. One of these algorithms is Τarjan's approach of the problem. In this project we study the following natural variant of the problem in dynamic graphs.
+![fault tolerance](https://user-images.githubusercontent.com/25777650/151781733-a97d70fc-8bde-4ce5-86c8-429ec5511f82.png)
+
+There are several classical algorithms for computing the SCCs in <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;O(m&space;&plus;&space;n)" title="\bg_white \inline O(m + n)" /> time.
+
+One of these algorithms is Τarjan's approach of the problem. In this project we study the following natural variant of the problem in dynamic graphs.
 
 
 
 ## Preliminaries
--Disclaimers:
- - This is a project that I worked on as my diploma thesis.
- - In this README I provide some basic information to get a better idea of the project.
- - **For more information about the theory behind this algorithm please read these pappers!**
-
+- Disclaimers:
+  - This is a project that I worked on as my diploma thesis.
+  - In this README I provide some basic information to get a better idea of the project.
+  - **For more information about the theory behind this algorithm please read these pappers!**
+  
 - **Assumption:** The out-degree of all vertices in the input graph G is at most two.
 
 - The algorithm for computing SCCs in a fault tolerant environment crucially uses the concept of a k-fault tolerant reachability subgraph (k-FTRS) which is a sparse
