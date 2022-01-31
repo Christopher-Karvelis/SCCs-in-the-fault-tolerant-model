@@ -189,12 +189,18 @@ It suffices to do a traversal from xmid in the graph GA, the induced subgraph of
 
 ## Main Algorithm
 
--Let C denote the collection of SCCs in G\F initialized to ∅. 
--We process the paths from P in non-decreasing order of their depths. 
--Let Path(a, b) be any path in P and let A be the set of vertices belonging to T (a). 
--We use the data structure Da,b to compute SCCs of G(A)\F intersecting Path(a, b). Let these be S1,..., St. 
--Note that some of these SCCs might be a part of some bigger SCC computed earlier. 
+-Let C denote the collection of SCCs in G\F initialized to ∅.
+
+-We process the paths from P in non-decreasing order of their depths.
+
+-Let Path(a, b) be any path in P and let A be the set of vertices belonging to T (a).
+
+-We use the data structure Da,b to compute SCCs of G(A)\F intersecting Path(a, b). Let these be S1,..., St.
+
+-Note that some of these SCCs might be a part of some bigger SCC computed earlier.
+
 -We can detect it by keeping a set W of all vertices for which we have computed their SCCs.
+
 -So if Si ⊆ W, then we can discard Si , else we add Si to collection C.
 
 
