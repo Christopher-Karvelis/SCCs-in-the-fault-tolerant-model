@@ -1,5 +1,5 @@
 # Strongly Conected Components in the Fault Tolerant Model
-
+My diploma thesis
 ## Table of Contents
 1.  [Purpose](https://github.com/Christopher-Karvelis/SCC-LAST#purpose)
 
