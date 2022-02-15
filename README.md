@@ -45,9 +45,9 @@ One of these algorithms is Τarjan's approach of the problem. In this project we
   - This is a project that I worked on as my diploma thesis.
   - In this README I provide some basic information to get a better idea of the project.
   - **For more information about the theory behind this algorithm please read the pappers:**
-              1. Pappers/1. An Efficient Strongly Connected Components.pdf
-              2. Pappers/2. Fault Tolerant Subgraph for Single Source Reachability.pdf
-- **Assumption:** The out-degree of all vertices in the input graph G is at most two.
+       1. Pappers/1. An Efficient Strongly Connected Components.pdf
+       2. Pappers/2. Fault Tolerant Subgraph for Single Source Reachability.pdf
+- **Assumption:** The out-degree of all vertices in the input graph G is at most two. If that's not the case then the input graph can be transformed to a graph where the out-degree of all vertices is at most two as described in page 15 of "2. Fault Tolerant Subgraph for Single Source Reachability.pdf".
 
 - The algorithm for computing SCCs in a fault tolerant environment crucially uses the concept of a k-fault tolerant reachability subgraph (k-FTRS) which is a sparse
 subgraph that preserves reachability from a given source vertex even after the failure of at most k edges in G.
